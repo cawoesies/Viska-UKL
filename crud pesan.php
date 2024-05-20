@@ -57,4 +57,3 @@ while($data = mysqli_fetch_array($query_mysql)){
 <?php } ?>
     </tr>
     </table>
-</body>

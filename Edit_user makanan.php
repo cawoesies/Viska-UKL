@@ -38,4 +38,3 @@ while($user_data = mysqli_fetch_array($result))
             </tr>
         </table>
     </form>
-</body>

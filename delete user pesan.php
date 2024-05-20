@@ -4,4 +4,3 @@ $id=$_GET["id"];
 
 $result= mysqli_query($mysqli,"DELETE FROM pesan WHERE id_pesan='$id'");
 header('location:crud pesan.php');
-?>

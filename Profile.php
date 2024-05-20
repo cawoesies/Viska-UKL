@@ -84,4 +84,3 @@
         width : auto;
         color : #324e32;
     }
-</style>

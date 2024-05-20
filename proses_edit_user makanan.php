@@ -16,4 +16,3 @@ if(isset($_POST['Simpan'])){
 } else {
     die("Akses dilarang");
 }
-?>

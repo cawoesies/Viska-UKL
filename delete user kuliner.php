@@ -4,4 +4,3 @@ $id=$_GET["id"];
 
 $result= mysqli_query($mysqli,"DELETE FROM kuliner WHERE id_kuliner='$id'");
 header('location:crud kuliner.php');
-?>
