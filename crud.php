@@ -22,7 +22,7 @@
 <DOCTYPE html>
 <html>
 <head>
-    <title>Kuliner</title>
+    <title>CRUD User & Admin</title>
 </head>
 <body>
     <a href="Tabel View.php"><button type="button">Back</button></a>

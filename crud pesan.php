@@ -22,7 +22,7 @@
 <DOCTYPE html>
 <html>
 <head>
-    <title>Kuliner</title>
+    <title>CRUD Pesan</title>
 </head>
 <body>
     <a href="Tabel View.php"><button type="button">Back</button></a>
@@ -52,7 +52,7 @@ while($data = mysqli_fetch_array($query_mysql)){
         <td><?php echo $data['jumlah']; ?></td>
 
         <td><span><a href='delete user pesan.php?id=<?php echo $data["id_pesan"];?>'>Hapus</a><span></td>
-        <td><span><a href='Edit_user pesan.php?id=<?php echo $data["id_pesan"];?>'>Edit</a><span></td>
+        <td><span><a href='edit_user pesan.php?id_pesan=<?php echo $data["id_pesan"];?>'>Edit</a><span></td>
 
 <?php } ?>
     </tr>

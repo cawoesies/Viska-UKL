@@ -91,7 +91,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>landing page</title>
+        <title>User Page</title>
     </head>
     <body>
         <div class="banner">
@@ -101,7 +101,7 @@
                     <li><a href="user_page.php">Home</a></li>
                     <li><a href="Kuliner.php">Kuliner</a></li>
                     <li><a href="Sejarah.php">Sejarah</a></li>
-                    <li><a href="Near me.php">Pesan</a></li>
+                    <li><a href="pesan.php">Pesan</a></li>
                     <li><a href="profile.php">Profile</a></li>
                 </ul>
             </div>
@@ -113,4 +113,3 @@
             </div>
         </div>
     </body>
-</html>

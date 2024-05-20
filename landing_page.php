@@ -1,6 +1,6 @@
 <style>
     body{
-    background-image: linear-gradient(rgba(1,1,1,0.1),rgba(1,1,1,0.1)), url(LitaraKu.jpg);
+    background-image:url('Litara 4.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;

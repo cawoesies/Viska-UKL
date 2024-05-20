@@ -8,7 +8,7 @@ if( !isset($_GET['id']) ){
 $id = $_GET['id'];
 
 //fetech user data based on id
-$result = mysqli_query($conn, "SELECT * FROM kuliner WHERE id_kuliner=$id_kuliner");
+$result = mysqli_query($conn, "SELECT * FROM kuliner WHERE id_kuliner=$id");
 
 while($user_data = mysqli_fetch_array($result))
 {
@@ -21,7 +21,7 @@ while($user_data = mysqli_fetch_array($result))
 
 <body>
     <header>
-        <h3>Formulir Edit User</h3>
+        <h3>Formulir Edit Kuliner</h3>
     </header>
     <form method="POST" action="proses_edit_user kuliner.php">
         <table>

@@ -1,6 +1,6 @@
 <style>
     body{
-    background-image: linear-gradient(rgba(1,1,1,0.1),rgba(1,1,1,0.1)), url(LitaraKu.jpg);
+    background-image: url('Litara.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -96,7 +96,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>landing page</title>
+        <title>Tabel View</title>
     </head>
     <body>
         <div class="banner">
@@ -105,12 +105,14 @@
                 <ul>
                     <li><a href="crud.php">Data User & admin</a></li>
                     <li><a href="crud kuliner.php">Data Kuliner</a></li>
+                    <li><a href="crud sejarah.php">Data Sejarah</a></li>
                     <li><a href="crud pesan.php">Data Pesan</a></li>
+                    <li><a href="crud makanan.php">Data Makanan</a></li>
 
                 </ul>
             </div>
             <div class="content">
-                <h1>EXPLORE THE FOOD</h1>
+                <h1>TABEL VIEW</h1>
                 <div>
                     <a href="landing_page.php"><button type="button">Back</button></a>
                 </div>
