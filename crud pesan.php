@@ -18,6 +18,25 @@
    button:hover{
     color: white;
    }
+   .btn{
+    width: 90px;
+    padding: 10px;
+    margin: 20px 5px;
+    text-align: center;
+    border-radius: 15px;
+    color: black;
+    border: 2px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+   }
+   .btn:hover{
+    background: #FFCAD4;
+    transition: 0.5s;
+   }
+   .btn:hover{
+    color: white;
+   }
     </style>
 <DOCTYPE html>
 <html>
@@ -57,3 +76,6 @@ while($data = mysqli_fetch_array($query_mysql)){
 <?php } ?>
     </tr>
     </table>
+    <div class="btn">
+    <a href="order.php"><btn type="btn">Tambahkan</btn></a>
+    </div>
