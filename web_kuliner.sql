@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2024 at 05:32 AM
+-- Generation Time: May 24, 2024 at 06:37 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -56,7 +56,7 @@ INSERT INTO `kuliner` (`id_kuliner`, `nama_kuliner`, `asal_kuliner`, `informasi_
 (15, 'Binte Biluhuta', 'Gorontalo', 'Masakan ini khas dari daerah Gorontalo. Masakan ini dikenal dengan sebutan Milu Siram. Bahan utamanya dari jagung yang disiram dengan bumbu khas dan dicampur dengan udang, belimbing sayur dan juga topping pelengkap lainnya.'),
 (16, 'Ayam Taliwang', 'Nusa Tenggara Barat', 'Masakan nusantara dari daerah Nusa Tenggara Barat ini berbahan dasar daging ayam. Daging ayam akan dibakar dan diberi bumbu cabai merah kering, bawang merah, bawang putih, tomat, terasi goreng, kencur, gula merah serta garam. Kemudian, ayam akan diberi bumbu tambahan, dan menu tambahan seperti plecing kangkung.'),
 (17, 'Sop Konro', 'Sulawesi Selatan', 'Sop konro merupakan masakan nusantara dari daerah Sulawesi Selatan. Sup konro mirip sup iga sapi yang disajikan dengan kuah berwarna coklat.'),
-(18, 'Serabi', 'Jawa Barat', 'Serabi adalah salah satu masakan nusantara dari Jawa Barat yang punya rasa manis. Dibuat dari tepung beras yang di panggang dan saat ini banyak dilengkapi aneka pilihan topping.');
+(18, 'Serabi ', 'Jawa Barat', 'Serabi adalah salah satu masakan nusantara dari Jawa Barat yang punya rasa manis. Dibuat dari tepung beras yang di panggang dan saat ini banyak dilengkapi aneka pilihan topping.');
 
 -- --------------------------------------------------------
 
@@ -106,20 +106,29 @@ CREATE TABLE `pesan` (
   `kuliner` varchar(100) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `jumlah` int(100) NOT NULL,
-  `id_kuliner` int(100) DEFAULT NULL
+  `harga` varchar(200) NOT NULL,
+  `id_makanan` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `pesan`
 --
 
-INSERT INTO `pesan` (`id_pesan`, `kuliner`, `alamat`, `jumlah`, `id_kuliner`) VALUES
-(1, 'Mie aceh', 'jl. ABC', 10, 1),
-(4, 'Rendang', 'gebang', 90, NULL),
-(5, 'Bika ambon', 'sedati', 7, NULL),
-(6, 'Serabi', 'a', 10, NULL),
-(7, 'Pempek', 'b', 32, NULL),
-(8, 'Papeda', 'm', 6, NULL);
+INSERT INTO `pesan` (`id_pesan`, `kuliner`, `alamat`, `jumlah`, `harga`, `id_makanan`) VALUES
+(1, 'Mie aceh', 'ABC', 10, '', 1),
+(4, 'Rendang', 'gebang', 90, '', NULL),
+(5, 'Bika ambon', 'sedati', 7, '', NULL),
+(6, 'Serabi', 'a', 10, '', NULL),
+(7, 'Pempek', 'b', 32, '', NULL),
+(8, 'Papeda', 'm', 6, '', NULL),
+(9, 'Kerak telor', 'sedati', 32, '', NULL),
+(10, 'Rawon', 'c', 87, '', NULL),
+(11, 'Serabi', 'aksbj', 90, '', NULL),
+(12, 'Rendang', 'thcfh', 81, '', NULL),
+(13, 'Kerak telor', 'zzzzz', 80, '', NULL),
+(14, 'Bika ambon', 'z', 50, '', NULL),
+(15, 'Bika ambon', 'h', 2, '', NULL),
+(16, 'Mie aceh', 'xyz', 1, '25.000', NULL);
 
 -- --------------------------------------------------------
 
@@ -177,14 +186,15 @@ CREATE TABLE `user_form` (
 
 INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 (3, 'viska', 'viskaa@gmail.com', '456', 'admin'),
-(4, 'aina', 'aina@gmail.com', '123', 'user'),
+(4, 'aina', 'aina@gmail.com', '7632', 'user'),
 (7, 'viska', 'viska@gmail.com', '789', 'user'),
 (8, 'efg', 'a@gmail.com', '678', 'admin'),
 (9, 'viska', 'viskaa@gmail.com', '777', 'user'),
 (10, 'v', 'v@gmail.com', '999', 'user'),
 (11, 'yosi', 'b@gmail.com', '123', 'admin'),
-(12, 'abc', 'abc@gmail.com', '666', 'user'),
-(13, 's', 's@gmail.com', '888', 'user');
+(12, 'abc', 'abc@gmail.com', '999', 'user'),
+(14, 'abcde', 'abcde@gmail.com', '12345', 'admin'),
+(16, 'z', 'z@gmail.com', '12', 'user');
 
 --
 -- Indexes for dumped tables
@@ -207,7 +217,9 @@ ALTER TABLE `makanan`
 --
 ALTER TABLE `pesan`
   ADD PRIMARY KEY (`id_pesan`),
-  ADD UNIQUE KEY `id_kuliner` (`id_kuliner`);
+  ADD UNIQUE KEY `id_kuliner` (`id_makanan`),
+  ADD UNIQUE KEY `id_makanan` (`id_makanan`),
+  ADD UNIQUE KEY `harga` (`harga`,`id_makanan`);
 
 --
 -- Indexes for table `sejarah`
@@ -241,7 +253,7 @@ ALTER TABLE `makanan`
 -- AUTO_INCREMENT for table `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pesan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sejarah`
@@ -253,7 +265,7 @@ ALTER TABLE `sejarah`
 -- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
