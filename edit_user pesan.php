@@ -15,6 +15,7 @@ while($user_data = mysqli_fetch_array($result))
     $kuliner = $user_data['kuliner'];
     $alamat = $user_data['alamat'];
     $jumlah = $user_data['jumlah'];
+    $harga = $user_data['harga'];
 }
 
 ?>
@@ -36,7 +37,11 @@ while($user_data = mysqli_fetch_array($result))
             <tr>
                 <td>Jumlah</td>
                 <td><input type="text" name="jumlah" value="<?php echo $jumlah?>"></td>
-            </tr>    
+            </tr>  
+            <tr>
+                <td>Harga</td>
+                <td><input type="text" name="harga" value="<?php echo $harga?>"></td>
+            </tr>   
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id_pesan'];?>></td>
                 <td><input type="submit" name="Simpan" value="Simpan"></td>

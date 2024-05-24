@@ -16,8 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kuliner = $_POST['kuliner'];
     $jumlah = $_POST['jumlah'];
     $alamat = $_POST['alamat'];
+    $harga = $_POST['harga'];
 
-    $sql = "INSERT INTO pesan (kuliner, jumlah, alamat) VALUES ('$kuliner', $jumlah, '$alamat')";
+    $sql = "INSERT INTO pesan (kuliner, jumlah, alamat, harga) VALUES ('$kuliner', $jumlah, '$alamat', '$harga')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New order created successfully";

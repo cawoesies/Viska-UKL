@@ -52,6 +52,7 @@
         <th>Kuliner</th>
         <th>Alamat</th>
         <th>Jumlah</th>
+        <th>Harga</th>
         <th colspan="2">Aksi</th>
     </tr>
 
@@ -69,6 +70,7 @@ while($data = mysqli_fetch_array($query_mysql)){
         <td><?php echo $data['kuliner']; ?></td>
         <td><?php echo $data['alamat']; ?></td>
         <td><?php echo $data['jumlah']; ?></td>
+        <td><?php echo $data['harga']; ?></td>
 
         <td><span><a href='delete user pesan.php?id=<?php echo $data["id_pesan"];?>'>Hapus</a><span></td>
         <td><span><a href='edit_user pesan.php?id_pesan=<?php echo $data["id_pesan"];?>'>Edit</a><span></td>

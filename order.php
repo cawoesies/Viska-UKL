@@ -117,6 +117,11 @@
                 <p>Alamat</p>
                 <input type="text" name="alamat">
             </div>
+
+            <div class="input">
+                <p>Total Harga</p>
+                <input type="text" name="harga">
+            </div>
             
             <input type="submit" name="submit" value="order" class="order_btn">
         </form>
