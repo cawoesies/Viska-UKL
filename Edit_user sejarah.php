@@ -8,7 +8,7 @@ if( !isset($_GET['id']) ){
 $id = $_GET['id'];
 
 //fetech user data based on id
-$result = mysqli_query($conn, "SELECT * FROM sejarah WHERE id_sejarah=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM sejarah WHERE id_sejarah=$id");
 
 while($user_data = mysqli_fetch_array($result))
 {

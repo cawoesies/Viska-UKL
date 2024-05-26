@@ -60,7 +60,7 @@
 $nomor = 1;
 //echo $nomor;
 include 'config.php';
-$query_mysql = mysqli_query($conn, "SELECT * FROM kuliner ")or die(mysqli_error());
+$query_mysql = mysqli_query($mysqli, "SELECT * FROM kuliner ")or die(mysqli_error());
 
 while($data = mysqli_fetch_array($query_mysql)){
     ?>

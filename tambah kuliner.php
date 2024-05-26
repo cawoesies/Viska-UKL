@@ -25,7 +25,7 @@
 include "config.php";
 
 if(isset($_POST['proses'])){
-    mysqli_query($conn,"INSERT INTO kuliner set
+    mysqli_query($mysqli,"INSERT INTO kuliner set
     id_kuliner = '$_POST[id_kuliner]',
     nama_kuliner = '$_POST[nama_kuliner]',
     asal_kuliner = '$_POST[asal_kuliner]',

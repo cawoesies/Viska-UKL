@@ -12,6 +12,10 @@
             <td>Harga</td>
             <td><input type="text" name="harga"></td>
         </tr>
+        <tr>
+            <td>Foto</td>
+            <td><input type="text" name="foto"></td>
+        </tr>
         <td></td>
         <td><input type="submit" value="Simpan" name="proses"></td>
     </table>
@@ -21,10 +25,11 @@
 include "config.php";
 
 if(isset($_POST['proses'])){
-    mysqli_query($conn,"INSERT INTO makanan set
+    mysqli_query($mysqli,"INSERT INTO makanan set
     id_makanan = '$_POST[id_makanan]',
     nama_makanan = '$_POST[nama_makanan]',
-    harga = '$_POST[harga]'");
+    harga = '$_POST[harga]',
+    foto = '$_POST[foto]'");
 
     echo "Data makanan baru telah tersimpan";
 }

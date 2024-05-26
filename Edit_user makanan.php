@@ -8,12 +8,13 @@ if( !isset($_GET['id']) ){
 $id = $_GET['id'];
 
 //fetech user data based on id
-$result = mysqli_query($conn, "SELECT * FROM makanan WHERE id_makanan=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM makanan WHERE id_makanan=$id");
 
 while($user_data = mysqli_fetch_array($result))
 {
     $nama_makanan = $user_data['nama_makanan'];
     $harga = $user_data['harga'];
+    $foto = $user_data['foto'];
 }
 
 ?>
@@ -31,6 +32,10 @@ while($user_data = mysqli_fetch_array($result))
             <tr>
                 <td>Harga</td>
                 <td><input type="text" name="harga" value="<?php echo $harga ?>"></td>
+            </tr> 
+            <tr>
+                <td>Foto</td>
+                <td><input type="text" name="foto" value="<?php echo $foto ?>"></td>
             </tr>     
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>

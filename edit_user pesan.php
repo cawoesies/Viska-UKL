@@ -8,11 +8,12 @@ if( !isset($_GET['id_pesan']) ){
 $id_pesan = $_GET['id_pesan'];
 
 //fetech user data based on id
-$result = mysqli_query($conn, "SELECT * FROM pesan WHERE id_pesan=$id_pesan");
+$result = mysqli_query($mysqli, "SELECT * FROM pesan WHERE id_pesan=$id_pesan");
 
 while($user_data = mysqli_fetch_array($result))
 {
     $kuliner = $user_data['kuliner'];
+    $nama = $user_data['nama'];
     $alamat = $user_data['alamat'];
     $jumlah = $user_data['jumlah'];
     $harga = $user_data['harga'];
@@ -29,6 +30,10 @@ while($user_data = mysqli_fetch_array($result))
             <tr>
                 <td>Kuliner</td>
                 <td><input type="text" name="kuliner" value="<?php echo $kuliner ?>"></td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" name="nama" value="<?php echo $nama ?>"></td>
             </tr>
             <tr>
                 <td>Alamat</td>

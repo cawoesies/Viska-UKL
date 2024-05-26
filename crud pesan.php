@@ -50,6 +50,7 @@
     <tr style="text-align:center;font-weight:bold;background-color:#FFCAD4;">
         <th>No</th>
         <th>Kuliner</th>
+        <th>Nama</th>
         <th>Alamat</th>
         <th>Jumlah</th>
         <th>Harga</th>
@@ -61,13 +62,16 @@
 $nomor = 1;
 //echo $nomor;
 include 'config.php';
-$query_mysql = mysqli_query($conn, "SELECT * FROM pesan ")or die(mysqli_error());
+$query_mysql = mysqli_query($mysqli, "SELECT pesan.id_pesan, pesan.kuliner, pesan.nama, pesan.alamat, pesan.jumlah, pesan.harga, makanan.id_makanan, makanan.nama_makanan
+FROM pesan 
+JOIN makanan ON pesan.id_makanan = makanan.id_makanan; ")or die(mysqli_error());
 
 while($data = mysqli_fetch_array($query_mysql)){
     ?>
     <tr style="text-align:center;">
         <td><?php echo $nomor++; ?></td>
         <td><?php echo $data['kuliner']; ?></td>
+        <td><?php echo $data['nama']; ?></td>
         <td><?php echo $data['alamat']; ?></td>
         <td><?php echo $data['jumlah']; ?></td>
         <td><?php echo $data['harga']; ?></td>

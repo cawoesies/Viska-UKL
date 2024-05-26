@@ -11,7 +11,7 @@ if(isset($_POST['Simpan'])){
 
     //buat query update
     $query = "UPDATE sejarah SET nama_sejarah='$nama_sejarah', informasi_sejarah='$informasi_sejarah' WHERE id_sejarah=$id_sejarah";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($mysqli, $query);
     header('location: Edit_user sejarah.php');
 } else {
     die("Akses dilarang");

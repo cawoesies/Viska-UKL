@@ -21,7 +21,7 @@
 include "config.php";
 
 if(isset($_POST['proses'])){
-    mysqli_query($conn,"INSERT INTO sejarah set
+    mysqli_query($mysqli,"INSERT INTO sejarah set
     id_sejarah = '$_POST[id_sejarah]',
     nama_sejarah = '$_POST[nama_sejarah]',
     informasi_sejarah = '$_POST[informasi_sejarah]'");

@@ -115,7 +115,7 @@
             <?php
             // select tabel user dari database
             include 'config.php';
-            $result = mysqli_query($conn, "SELECT * FROM kuliner") or die (mysqli_error());
+            $result = mysqli_query($mysqli, "SELECT * FROM kuliner") or die (mysqli_error());
 
             while($data = mysqli_fetch_array($result)){
                 ?>

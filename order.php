@@ -112,6 +112,11 @@
                 <p>Jumlah</p>
                 <input type="number" name="jumlah">
             </div>
+
+            <div class="input">
+                <p>Nama</p>
+                <input type="text" name="nama">
+            </div>
             
             <div class="input">
                 <p>Alamat</p>

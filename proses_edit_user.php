@@ -12,7 +12,7 @@ if(isset($_POST['Simpan'])){
     $user_type = $_POST['user_type'];
 
     //buat query update
-    $result = mysqli_query($conn, "UPDATE user_form SET name='$name',email='$email',password='$password', user_type='$user_type' WHERE id=$id");
+    $result = mysqli_query($mysqli, "UPDATE user_form SET name='$name',email='$email',password='$password', user_type='$user_type' WHERE id=$id");
     header('location: Edit_user.php');
 } else {
     die("Akses dilarang");

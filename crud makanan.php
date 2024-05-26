@@ -51,6 +51,7 @@
         <th>No</th>
         <th>Makanan</th>
         <th>Harga</th>
+        <th>Foto</th>
         <th colspan="2">Aksi</th>
     </tr>
 
@@ -59,7 +60,7 @@
 $nomor = 1;
 //echo $nomor;
 include 'config.php';
-$query_mysql = mysqli_query($conn, "SELECT * FROM makanan ")or die(mysqli_error());
+$query_mysql = mysqli_query($mysqli, "SELECT * FROM makanan ")or die(mysqli_error());
 
 while($data = mysqli_fetch_array($query_mysql)){
     ?>
@@ -67,6 +68,7 @@ while($data = mysqli_fetch_array($query_mysql)){
         <td><?php echo $nomor++; ?></td>
         <td><?php echo $data['nama_makanan']; ?></td>
         <td><?php echo $data['harga']; ?></td>
+        <td><?php echo $data['foto']; ?></td>
 
         <td><span><a href='delete user makanan.php?id=<?php echo $data["id_makanan"];?>'>Hapus</a><span></td>
         <td><span><a href='Edit_user makanan.php?id=<?php echo $data["id_makanan"];?>'>Edit</a><span></td>

@@ -16,7 +16,7 @@ if(isset($_POST['Simpan'])){
     //$query = "UPDATE kuliner SET nama_kuliner='$nama_kuliner', asal_kuliner='$asal_kuliner', informasi_kuliner='$informasi_kuliner' WHERE id=$id_kuliner";
     //$result = mysqli_query($conn, $query);
     $query = "UPDATE kuliner SET nama_kuliner='$nama_kuliner', asal_kuliner='$asal_kuliner', informasi_kuliner='$informasi_kuliner' WHERE id_kuliner=$id_kuliner";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($mysqli, $query);
     header('location: Edit_user kuliner.php');
 } else {
     die("Akses dilarang");
