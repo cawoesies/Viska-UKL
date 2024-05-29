@@ -1,3 +1,22 @@
+<?php
+include("config.php");
+
+//kalau tidak ada id di query string
+if( !isset($_GET['id']) ){
+    header('location: crud makanan.php');
+}
+$id = $_GET['id'];
+
+//fetech user data based on id
+$result = mysqli_query($mysqli, "SELECT * FROM makanan WHERE id_makanan=$id");
+
+while($user_data = mysqli_fetch_array($result))
+{
+    $id_makanan = $user_data['nama_makanan'];
+    $nama_makanan = $user_data['nama_makanan'];
+    $harga = $user_data['harga'];
+    $foto = $user_data['foto'];
+}?>
 <style>
     .order{
         width: 100%;
@@ -102,10 +121,11 @@
             <img src="gambar.png">
         </div>
         
-        <form action="proses pesan.php" method="POST">
+        <form action="proses_pesan.php" method="POST">
             <div class="input">
                 <p>Makanan</p>
-                <input type="text" name="nama_makanan">
+                <input type="hidden" name="id_makanan" value="<?php echo $id_makanan ?>">
+                <input type="text" name="nama_makanan" value="<?php echo $nama_makanan ?>">
             </div>
             
             <div class="input">
@@ -124,8 +144,8 @@
             </div>
 
             <div class="input">
-                <p>Total Harga</p>
-                <input type="text" name="harga">
+                <p>Harga</p>
+                <input type="text" name="harga" value="<?php echo $harga ?>">
             </div>
             
             <input type="submit" name="submit" value="order" class="order_btn">

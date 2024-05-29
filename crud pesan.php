@@ -62,7 +62,16 @@
 $nomor = 1;
 //echo $nomor;
 include 'config.php';
-$query_mysql = mysqli_query($mysqli, "SELECT pesan.id_pesan, pesan.alamat, pesan.jumlah, pesan.harga, user_form.id_user, makanan.nama_makanan, makanan.harga AS harga_makanan, makanan.foto 
+$query_mysql = mysqli_query($mysqli, "SELECT 
+pesan.id_pesan, 
+pesan.alamat, 
+pesan.jumlah, 
+pesan.harga, 
+user_form.id_user, 
+makanan.nama_makanan, 
+makanan.harga AS 
+harga_makanan, 
+makanan.foto 
 FROM pesan 
 JOIN makanan ON pesan.nama_makanan = makanan.nama_makanan 
 JOIN user_form ON pesan.id_user = user_form.id_user;")or die(mysqli_error());

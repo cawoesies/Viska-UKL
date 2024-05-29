@@ -137,7 +137,7 @@ body{
                     <img src="<?php echo $data['foto'] ?>" alt="Makanan">
                     <span class="price"><?php echo $data['harga']; ?></span>
                     <h3><?php echo $data['nama_makanan']; ?></h3>
-                    <a href="order.php" class="btn">Order Now</a>
+                    <a href="order.php?id=<?php echo $data["id_makanan"];?>" class="btn">Order Now</a>
                 </div>
             <?php } ?>
         </div>
