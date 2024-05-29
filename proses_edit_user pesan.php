@@ -6,8 +6,8 @@ include("config.php");
 if(isset($_POST['Simpan'])){
 
     $id_pesan = $_POST['id'];
-    $kuliner = $_POST['kuliner'];
-    $nama = $_POST['nama'];
+    $nama_makanan = $_POST['nama_makanan'];
+    $id_user = $_POST['id_user'];
     $alamat = $_POST['alamat'];
     $jumlah = $_POST['jumlah'];
     $harga = $_POST['harga'];
@@ -15,7 +15,7 @@ if(isset($_POST['Simpan'])){
     //buat query update
     // $mysqli_query = ($conn, "UPDATE pesan 
     // SET jumlah='$jumlah',alamat='$alamat',kuliner='$kuliner' WHERE id_pesan=$id_pesan");
-    $query = "UPDATE pesan SET harga='$harga', jumlah='$jumlah', alamat='$alamat', nama='$nama', kuliner='$kuliner' WHERE id_pesan=$id_pesan";
+    $query = "UPDATE pesan SET harga='$harga', jumlah='$jumlah', alamat='$alamat', id_user='$id_user', nama_makanan='$nama_makanan' WHERE id_pesan=$id_pesan";
     $result = mysqli_query($mysqli, $query);
     header('location: edit_user pesan.php');
 } else {

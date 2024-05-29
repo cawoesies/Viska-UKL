@@ -13,14 +13,13 @@ if ($mysqli->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // $id_pesan = $_POST['id_pesan']; // Remove this line if id_pesan is not needed
-    $kuliner = $_POST['kuliner'];
+    $nama_makanan = $_POST['nama_makanan'];
     $jumlah = $_POST['jumlah'];
-    $nama = $_POST['nama'];
+    $id_user = $_POST['id_user'];
     $alamat = $_POST['alamat'];
     $harga = $_POST['harga'];
 
-    $sql = "INSERT INTO pesan (kuliner, jumlah, nama, alamat, harga) VALUES ('$kuliner', '$jumlah', '$nama', '$alamat', '$harga')";
+    $sql = "INSERT INTO pesan (nama_makanan, jumlah, id_user, alamat, harga) VALUES ('$nama_makanan', '$jumlah', 1, '$alamat', '$harga')";
 
     if ($mysqli->query($sql) === TRUE) {
         echo "New order created successfully";

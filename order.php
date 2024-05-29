@@ -104,8 +104,8 @@
         
         <form action="proses pesan.php" method="POST">
             <div class="input">
-                <p>Kuliner</p>
-                <input type="text" name="kuliner">
+                <p>Makanan</p>
+                <input type="text" name="nama_makanan">
             </div>
             
             <div class="input">
@@ -115,7 +115,7 @@
 
             <div class="input">
                 <p>Nama</p>
-                <input type="text" name="nama">
+                <input type="text" name="id_user">
             </div>
             
             <div class="input">

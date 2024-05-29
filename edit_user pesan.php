@@ -12,8 +12,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM pesan WHERE id_pesan=$id_pesan");
 
 while($user_data = mysqli_fetch_array($result))
 {
-    $kuliner = $user_data['kuliner'];
-    $nama = $user_data['nama'];
+    $nama_makanan = $user_data['nama_makanan'];
+    $id_user = $user_data['id_user'];
     $alamat = $user_data['alamat'];
     $jumlah = $user_data['jumlah'];
     $harga = $user_data['harga'];
@@ -29,11 +29,11 @@ while($user_data = mysqli_fetch_array($result))
         <table>
             <tr>
                 <td>Kuliner</td>
-                <td><input type="text" name="kuliner" value="<?php echo $kuliner ?>"></td>
+                <td><input type="text" name="nama_makanan" value="<?php echo $nama_makanan ?>"></td>
             </tr>
             <tr>
                 <td>Nama</td>
-                <td><input type="text" name="nama" value="<?php echo $nama ?>"></td>
+                <td><input type="text" name="id_user" value="<?php echo $id_user ?>"></td>
             </tr>
             <tr>
                 <td>Alamat</td>

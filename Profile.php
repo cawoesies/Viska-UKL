@@ -4,17 +4,21 @@
         <title>Profile</title>
     </head>
     <body>
-    <button class="back-button"><a href="user_page.php">Back</a></button>
+    <button class="back-button"><a href="landing_page.php">Back</a></button>
         <div class="main">
             <div class="img"></div>
             <h1>Viska Atalia Ramadhani</h1>
             <div class="text">Student from <strong>SMK Telkom Sidoarjo</strong></div>
-            <p>Haloo, Selamat datang di halaman website saya. This is my first website project. Jika ada masukan silahkan berikan di sosial media saya.</p>
+            <p>Haloo, Selamat datang di halaman website saya. This is my first website project. Saya lahir di Surabaya pada tanggal 7 Oktober 2007. Saya memiliki hobi bermain badminton.</p>
             <ul>
                 <li><a href="https://www.instagram.com/viskawaii?igsh=MXFxY3diYWNxbnkwMA=="><img src="ig.png" width="45px" height="45px"></a></li>
                 <li><a href="https://www.facebook.com/share/D4TLDvj6BjWd63Ww/?mibextid=qi2Omg"><img src="fb.png" width="65px" height="35px"></a></li>
                 <li><a href="https://www.linkedin.com/in/viska-atalia-0894b72a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="linkedin.png" width="50px" height="50px"></a></li>
             </ul>
+            <p>Email:viskaatalia07@gmail.com</p>
+            <p>+6289512476417</p>
+            <p>Sidoarjo, Jawa timur, Indonesia</p>
+
         </div>
     </body>
 </html>
