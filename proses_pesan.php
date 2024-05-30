@@ -18,6 +18,7 @@ if (isset($_POST['Submit']) && isset($_SESSION['id_user'])) {
     $id_user = $_POST['id_user'];
     $alamat = $_POST['alamat'];
     $harga = $_POST['harga'];
+    
 
     $sql = "INSERT INTO pesan (id_makanan, jumlah, id_user, alamat, harga) VALUES ('$id_makanan', '$jumlah','$id_user' , '$alamat', '$harga')";
 

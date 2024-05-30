@@ -62,29 +62,29 @@
 $nomor = 1;
 //echo $nomor;
 include 'config.php';
-$query_mysql = mysqli_query($mysqli, "SELECT 
-pesan.id_pesan, 
-pesan.alamat, 
-pesan.jumlah, 
-pesan.harga, 
-user_form.id_user, 
-makanan.nama_makanan, 
-makanan.harga AS 
-harga_makanan, 
-makanan.foto 
-FROM pesan 
-JOIN makanan ON pesan.nama_makanan = makanan.nama_makanan 
-JOIN user_form ON pesan.id_user = user_form.id_user;")or die(mysqli_error());
+$query_mysql = mysqli_query($mysqli, "SELECT
+pesan.id_pesan,
+pesan.alamat,
+pesan.jumlah,
+pesan.harga,
+makanan.nama_makanan,
+makanan.harga AS harga_makanan,
+makanan.foto
+FROM
+pesan
+JOIN
+makanan ON pesan.id_makanan = makanan.id_makanan")or die(mysqli_error());
 
 while($data = mysqli_fetch_array($query_mysql)){
     ?>
     <tr style="text-align:center;">
         <td><?php echo $nomor++; ?></td>
-        <td><?php echo $data['nama_makanan']; ?></td>
+        <td><?php echo $data['id_makanan']; ?></td>
         <td><?php echo $data['id_user']; ?></td>
         <td><?php echo $data['alamat']; ?></td>
         <td><?php echo $data['jumlah']; ?></td>
         <td><?php echo $data['harga']; ?></td>
+        <td><?php echo $data['total_harga']; ?></td>
 
         <td><span><a href='delete user pesan.php?id=<?php echo $data["id_pesan"];?>'>Hapus</a><span></td>
         <td><span><a href='edit_user pesan.php?id_pesan=<?php echo $data["id_pesan"];?>'>Edit</a><span></td>
