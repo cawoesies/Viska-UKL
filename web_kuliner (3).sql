@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Bulan Mei 2024 pada 01.36
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Generation Time: May 30, 2024 at 04:57 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kuliner`
+-- Table structure for table `kuliner`
 --
 
 CREATE TABLE `kuliner` (
@@ -36,7 +36,7 @@ CREATE TABLE `kuliner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `kuliner`
+-- Dumping data for table `kuliner`
 --
 
 INSERT INTO `kuliner` (`id_kuliner`, `nama_kuliner`, `asal_kuliner`, `informasi_kuliner`, `id_sejarah`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `kuliner` (`id_kuliner`, `nama_kuliner`, `asal_kuliner`, `informasi_
 (7, 'Gudeg', 'Jogja', 'Masakan nusantara dari Jogja wajib dicicipi. Gudeg adalah sayur nangka muda yang dimasak dengan santan tapi melalui proses yang lama. Gudeg biasa disajikan dengan nasi panas, kuah santan kental (areh), ayam kampung, telur dan serta sambal krecek.', 7),
 (8, 'Rujak Cingur', 'Jawa Timur', 'Masakan nusantara dari Jawa Timur, yaitu rujak cingur yang sangat terkenal. Rujak dibuat dari campuran cingur (mulut sapi), sayur dan buah-buahan yang disirami dengan bumbu petis.', 8),
 (9, 'Ayam Betutu', 'Bali', 'Ayam Betutu adalah masakan nusantara dari Bali. Betutu sendiri adalah lauk yang terbuat dari ayam atau bebek utuh berisi bumbu, lalu dipanggang dengan api sekam.', 9),
-(10, 'Rawon', 'Jawa Timur', 'Rawon merupakan masakan nusantara dari Jawa Timur yang paling terkenal. Makanan ini identik dengan kuah hitamnya. Warna hitam pada rawon tersebut tidak lain berasal dari bumbu khas yaitu kluwek. Rasa rawon sangat ramah bagi Anda yang tidak suka pedas. Masakan ini semakin nikmat disantap dengan nasi putih, kerupuk, serta lauk pelengkap seperti telur asin.', 10),
+(10, 'Rawon', 'Jawa Timur', 'Rawon merupakan masakan nusantara dari Jawa Timur yang paling terkenal. Makanan ini identik dengan kuah hitamnya. Warna hitam pada rawon tersebut tidak lain berasal dari bumbu khas yaitu kluwek. Rasa rawon sangat ramah bagi Anda yang tidak suka pedas. Masakan ini semakin nikmat disantap dengan nasi putih, kerupuk, serta lauk pelengkap seperti telur asin. kluwek sendiri memiliki manfaat menjaga daya tahan tubuh karena di bagian biji kluwek memiliki kandungan vitamin C dan zat besi yang cukup tinggi', 10),
 (11, 'Soto Banjar', 'Kalimantan Selatan', 'Soto Banjar adalah masakan nusantara dari daerah Kalimantan Selatan. Soto Banjar dibuat dari daging ayam yang dicampur dengan bumbu rempah-rempah, biasanya ditambah perkedel dan kentang rebus.', 11),
 (12, 'Papeda', 'Papua', 'Papeda merupakan salah satu masakan nusantara dari Papua yang dibuat dari sagu. Papeda harus dimasak selama beberapa menit hingga tekstur makanan berubah jadi bubur. Bubur putih dengan tekstur lengket seperti itu akan terasa hambar. Sebagai pelengkap, masakan nusantara ini diberi ikan kuah pedas dan sayur-sayuran.', 12),
 (13, 'Gohu ikan', 'Maluku Utara', 'Sedangkan di Maluku Utara, ada masakan nusantara yang khas yaitu Gohu Ikan. Masakan ini berbahan dasar ikan tuna mentah, yang dicampur dengan bumbu gohu.', 13),
@@ -62,68 +62,86 @@ INSERT INTO `kuliner` (`id_kuliner`, `nama_kuliner`, `asal_kuliner`, `informasi_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `makanan`
+-- Table structure for table `makanan`
 --
 
 CREATE TABLE `makanan` (
   `id_makanan` int(200) NOT NULL,
   `nama_makanan` varchar(100) NOT NULL,
-  `harga` varchar(100) NOT NULL,
+  `harga` varchar(255) NOT NULL,
   `foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `makanan`
+-- Dumping data for table `makanan`
 --
 
 INSERT INTO `makanan` (`id_makanan`, `nama_makanan`, `harga`, `foto`) VALUES
-(1, 'Mie Aceh', 'Rp.25.000', 'Mie-aceh.jpg'),
-(2, 'Rendang', 'Rp.25.000', 'Rendang.jpg'),
-(3, 'Gulai Belacan', 'Rp.40.000', 'Gulai belacan.jpg'),
+(1, 'Mie Aceh', 'Rp.30.000', 'Mie-aceh.jpg'),
+(2, 'Rendang', 'Rp.23.000', 'Rendang.jpg'),
+(3, 'Gulai Belacan', 'Rp.35.000', 'Gulai belacan.jpg'),
 (4, 'Bika Ambon', 'Rp.110.000', 'Bika ambon.jpg'),
 (5, 'Pempek', 'Rp.55.000', 'Pempek.jpg'),
 (6, 'Kerak Telor', 'Rp.20.000', 'Kerak telor.jpg'),
-(7, 'Gudeg', 'Rp.30.000', 'Gudeg.jpg'),
-(8, 'Rujak Cingur', 'Rp.22.000', 'Rujak  cingur.jpg'),
+(7, 'Gudeg', 'Rp.35.000', 'Gudeg.jpg'),
+(8, 'Rujak Cingur', 'Rp.20.000', 'Rujak  cingur.jpg'),
 (9, 'Ayam Betutu', 'Rp.55.000', 'Ayam betutu.jpg'),
-(10, 'Rawon', 'Rp.35.000', 'Rawon.jpg'),
-(11, 'Soto Banjar', 'Rp.19.000', 'Soto banjar.jpg'),
-(12, 'Papeda', 'Rp.75.000', 'Papeda.jpg'),
-(13, 'Gohu Ikan', 'Rp.55.000', 'Gohu ikan.jpg'),
-(14, 'Kepiting Soka', 'Rp.105.000', 'Kepiting soka.jpg'),
-(15, 'Binte Biluhuta', 'Rp.25.000', 'Binte biluhuta.jpg'),
-(16, 'Ayam Taliwang', 'Rp.40.000', 'Ayam taliwang.jpg'),
-(17, 'Sop Konro', 'Rp.55.000', 'Sop konro.jpg'),
-(18, 'Serabi', 'Rp.15.000', 'Serabi.jpg');
+(10, 'Rawon', 'Rp.30.000', 'Rawon.jpg'),
+(11, 'Soto Banjar', 'Rp.22.000', 'Soto banjar.jpg'),
+(12, 'Papeda', 'Rp.32.000', 'Papeda.jpg'),
+(13, 'Gohu Ikan', 'Rp.36.000', 'Gohu ikan.jpg'),
+(14, 'Kepiting Soka', 'Rp.80.000', 'Kepiting soka.jpg'),
+(15, 'Binte Biluhuta', 'Rp.37.000', 'Binte biluhuta.jpg'),
+(16, 'Ayam Taliwang', 'Rp.45.000', 'Ayam taliwang.jpg'),
+(17, 'Sop Konro', 'Rp.48.000', 'Sop konro.jpg'),
+(18, 'Serabi', 'Rp.10.000', 'Serabi.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pesan`
+-- Table structure for table `pesan`
 --
 
 CREATE TABLE `pesan` (
   `id_pesan` int(100) NOT NULL,
-  `kuliner` varchar(100) NOT NULL,
-  `nama` varchar(100) NOT NULL,
+  `id_user` int(100) UNSIGNED NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `jumlah` int(100) NOT NULL,
-  `harga` varchar(100) NOT NULL,
-  `id_makanan` int(100) NOT NULL
+  `harga` decimal(65,0) NOT NULL,
+  `id_makanan` int(255) NOT NULL,
+  `total_harga` decimal(65,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pesan`
+-- Dumping data for table `pesan`
 --
 
-INSERT INTO `pesan` (`id_pesan`, `kuliner`, `nama`, `alamat`, `jumlah`, `harga`, `id_makanan`) VALUES
-(1, 'Mie aceh', 'nada', 'nganjuk', 3, '75.000', 1),
-(2, 'Bika ambon', 'hani', 'damarsi', 1, '110.000', 4);
+INSERT INTO `pesan` (`id_pesan`, `id_user`, `alamat`, `jumlah`, `harga`, `id_makanan`, `total_harga`) VALUES
+(1, 1, 'abc', 2, 50, 0, 0),
+(40, 1, 'Jasem', 2, 100, 0, 0),
+(41, 1, 'Jasem', 23, 50, 0, 0),
+(42, 1, 'gebang', 4, 100, 0, 0),
+(43, 1, 'gebang', 4, 100, 0, 0),
+(44, 1, 'Jasem', 2, 100, 0, 0),
+(45, 1, 'abc', 23, 100, 0, 0),
+(46, 1, 'gebang', 1, 50, 0, 0),
+(47, 1, 'xfhmfj', 5, 120, 0, 0),
+(48, 1, 'abc', 2, 75, 0, 0),
+(49, 1, 'abc', 2, 75, 0, 0),
+(51, 1, 'b', 8, 0, 0, 0),
+(52, 1, 'b', 8, 0, 0, 0),
+(53, 1, 'b', 8, 0, 0, 0),
+(55, 1, 'fdfsd', 3, 100, 0, 0),
+(56, 1, 'fdfsd', 3, 100, 0, 0),
+(57, 1, 'afdggf', 8, 110, 0, 0),
+(58, 1, 'm', 1, 50, 0, 0),
+(59, 1, 'abcde', 1, 40, 0, 0),
+(60, 1, ' Sidoarjo', 3, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sejarah`
+-- Table structure for table `sejarah`
 --
 
 CREATE TABLE `sejarah` (
@@ -134,7 +152,7 @@ CREATE TABLE `sejarah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `sejarah`
+-- Dumping data for table `sejarah`
 --
 
 INSERT INTO `sejarah` (`id_sejarah`, `nama_sejarah`, `informasi_sejarah`, `id_kuliner`) VALUES
@@ -160,11 +178,11 @@ INSERT INTO `sejarah` (`id_sejarah`, `nama_sejarah`, `informasi_sejarah`, `id_ku
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_form`
+-- Table structure for table `user_form`
 --
 
 CREATE TABLE `user_form` (
-  `id` int(100) NOT NULL,
+  `id_user` int(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -172,10 +190,10 @@ CREATE TABLE `user_form` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `user_form`
+-- Dumping data for table `user_form`
 --
 
-INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
+INSERT INTO `user_form` (`id_user`, `name`, `email`, `password`, `user_type`) VALUES
 (3, 'viska', 'viskaa@gmail.com', '456', 'admin'),
 (4, 'aina', 'aina@gmail.com', '7632', 'user'),
 (7, 'viska', 'viska@gmail.com', '789', 'user'),
@@ -185,98 +203,98 @@ INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 (11, 'yosi', 'b@gmail.com', '123', 'admin'),
 (12, 'abc', 'abc@gmail.com', '999', 'user'),
 (16, 'z', 'z@gmail.com', '12', 'user'),
-(17, 'raya', 'raya@gmail.com', '444', 'user');
+(17, 'raya', 'raya@gmail.com', '444', 'user'),
+(18, 'abc', 'abc1@gmail.com', '5678', 'user'),
+(19, 'hijk', 'hijk@gmail.com', '23', 'user'),
+(20, 'maudi', 'maudi@gmail.com', '333', 'user'),
+(21, 'ibrani', 'ibrani@gmail.com', '666', 'user');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `kuliner`
+-- Indexes for table `kuliner`
 --
 ALTER TABLE `kuliner`
   ADD PRIMARY KEY (`id_kuliner`),
   ADD KEY `id_sejarah` (`id_sejarah`);
 
 --
--- Indeks untuk tabel `makanan`
+-- Indexes for table `makanan`
 --
 ALTER TABLE `makanan`
   ADD PRIMARY KEY (`id_makanan`);
 
 --
--- Indeks untuk tabel `pesan`
+-- Indexes for table `pesan`
 --
 ALTER TABLE `pesan`
   ADD PRIMARY KEY (`id_pesan`),
-  ADD KEY `harga` (`harga`,`id_makanan`),
-  ADD KEY `fk_pesan` (`id_makanan`);
+  ADD KEY `harga` (`harga`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `nama_makanan` (`id_makanan`),
+  ADD KEY `nama_makanan_2` (`id_makanan`);
 
 --
--- Indeks untuk tabel `sejarah`
+-- Indexes for table `sejarah`
 --
 ALTER TABLE `sejarah`
   ADD PRIMARY KEY (`id_sejarah`),
   ADD KEY `id_kuliner` (`id_kuliner`);
 
 --
--- Indeks untuk tabel `user_form`
+-- Indexes for table `user_form`
 --
 ALTER TABLE `user_form`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `kuliner`
+-- AUTO_INCREMENT for table `kuliner`
 --
 ALTER TABLE `kuliner`
   MODIFY `id_kuliner` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT untuk tabel `makanan`
+-- AUTO_INCREMENT for table `makanan`
 --
 ALTER TABLE `makanan`
   MODIFY `id_makanan` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT untuk tabel `pesan`
+-- AUTO_INCREMENT for table `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id_pesan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_pesan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
--- AUTO_INCREMENT untuk tabel `sejarah`
+-- AUTO_INCREMENT for table `sejarah`
 --
 ALTER TABLE `sejarah`
   MODIFY `id_sejarah` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT untuk tabel `user_form`
+-- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `kuliner`
+-- Constraints for table `kuliner`
 --
 ALTER TABLE `kuliner`
   ADD CONSTRAINT `fk_kuliner` FOREIGN KEY (`id_sejarah`) REFERENCES `sejarah` (`id_sejarah`);
 
 --
--- Ketidakleluasaan untuk tabel `pesan`
---
-ALTER TABLE `pesan`
-  ADD CONSTRAINT `fk_pesan` FOREIGN KEY (`id_makanan`) REFERENCES `makanan` (`id_makanan`);
-
---
--- Ketidakleluasaan untuk tabel `sejarah`
+-- Constraints for table `sejarah`
 --
 ALTER TABLE `sejarah`
   ADD CONSTRAINT `fk_sejarah` FOREIGN KEY (`id_kuliner`) REFERENCES `kuliner` (`id_kuliner`);
