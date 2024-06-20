@@ -79,46 +79,35 @@ body {
     font-size: 14px;
 }
 </style><?php
-
-@include 'config.php';
-
 session_start();
+include("config.php");
 
 if(isset($_POST['submit'])){
-
-$name = mysqli_real_escape_string($mysqli, $_POST['name']);
-$email = mysqli_real_escape_string($mysqli, $_POST['email']);
-$pass = $_POST['password'];
-$cpass = $_POST['cpassword'];
-$user_type = $_POST['user_type'];
-
-$select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
-
-$result = mysqli_query($mysqli, $select);
-
-if(mysqli_num_rows($result) > 0){
-
-    $row = mysqli_fetch_array($result);
-
-    if($row['user_type'] == 'admin'){
-
-        $_SESSION['admin_name'] = $row['name'];
-        header('location:Tabel View.php');
-
-    }elseif($row['user_type'] == 'user'){
-
-        $_SESSION['user_name'] = $row['name'];
-        header('location:user_page.php');
-
+    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+    $pass = mysqli_real_escape_string($mysqli, $_POST['password']);
+    
+    $select = "SELECT * FROM user_form WHERE email = '$email' AND password = '$pass'";
+    $result = mysqli_query($mysqli, $select);
+    
+    if(mysqli_num_rows($result) > 0){
+        $row = mysqli_fetch_array($result);
+        
+        $_SESSION['user_id'] = $row['id']; // Store user ID in session
+        $_SESSION['user_name'] = $row['name']; // Store user name in session
+        
+        if($row['user_type'] == 'admin'){
+            $_SESSION['admin_name'] = $row['name'];
+            header('Location: Tabel View.php');
+        } elseif($row['user_type'] == 'user'){
+            $_SESSION['user_name'] = $row['name'];
+            header('Location: user_page.php');
+        }
+    } else {
+        $error[] = 'incorrect email or password';
     }
-
-}else{
-    $error[] = 'incorrect email or password';
 }
-
-
-};
 ?>
+
 
 
 <!DOCTYPE html>

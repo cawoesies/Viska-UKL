@@ -12,6 +12,10 @@
             <td>Informasi</td>
             <td><input type="text" name="informasi_sejarah"></td>
         </tr>
+        <tr>
+            <td>ID Kuliner</td>
+            <td><input type="text" name="id_kuliner"></td>
+        </tr>
         <td></td>
         <td><input type="submit" value="Simpan" name="proses"></td>
     </table>
@@ -20,16 +24,30 @@
 <?php
 include "config.php";
 
-if(isset($_POST['proses'])){
-    mysqli_query($mysqli,"INSERT INTO sejarah set
-    id_sejarah = '$_POST[id_sejarah]',
-    nama_sejarah = '$_POST[nama_sejarah]',
-    informasi_sejarah = '$_POST[informasi_sejarah]'");
-
-    echo "Data makanan baru telah tersimpan";
+if (isset($_POST['proses'])) {
+    // Retrieve and sanitize user input
+    $id_sejarah = mysqli_real_escape_string($mysqli, $_POST['id_sejarah']);
+    $nama_sejarah = mysqli_real_escape_string($mysqli, $_POST['nama_sejarah']);
+    $informasi_sejarah = mysqli_real_escape_string($mysqli, $_POST['informasi_sejarah']);
+    $id_kuliner = mysqli_real_escape_string($mysqli, $_POST['id_kuliner']);
+    
+    // Check if id_kuliner exists in kuliner table
+    $check_kuliner = mysqli_query($mysqli, "SELECT id_kuliner FROM kuliner WHERE id_kuliner = '$id_kuliner'");
+    if (mysqli_num_rows($check_kuliner) > 0) {
+        // Insert data into sejarah table
+        $query = "INSERT INTO sejarah (id_sejarah, nama_sejarah, informasi_sejarah, id_kuliner) 
+                  VALUES ('$id_sejarah', '$nama_sejarah', '$informasi_sejarah', '$id_kuliner')";
+        if (mysqli_query($mysqli, $query)) {
+            echo "Data sejarah baru telah tersimpan";
+        } else {
+            echo "Error: " . $query . "<br>" . mysqli_error($mysqli);
+        }
+    } else {
+        echo "Error: ID Kuliner tidak ditemukan di tabel kuliner";
+    }
 }
-
 ?>
+
 
 <style>
     body {

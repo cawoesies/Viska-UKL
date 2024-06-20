@@ -1,22 +1,33 @@
 <?php
+session_start();
 include("config.php");
 
-//kalau tidak ada id di query string
-if( !isset($_GET['id']) ){
-    header('location: crud makanan.php');
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login_form.php');
+    exit();
 }
+
+// Retrieve user information from session
+$user_id = $_SESSION['user_id'];
+$user_name = $_SESSION['user_name'];
+
+if (!isset($_GET['id'])) {
+    header('location: crud_makanan.php');
+    exit();
+}
+
 $id = $_GET['id'];
 
-//fetech user data based on id
+// Fetch food data based on ID
 $result = mysqli_query($mysqli, "SELECT * FROM makanan WHERE id_makanan=$id");
+$user_data = mysqli_fetch_array($result);
 
-while($user_data = mysqli_fetch_array($result))
-{
-    $id_makanan = $user_data['nama_makanan'];
-    $nama_makanan = $user_data['nama_makanan'];
-    $harga = $user_data['harga'];
-    $foto = $user_data['foto'];
-}?>
+$id_makanan = $user_data['id_makanan'];
+$nama_makanan = $user_data['nama_makanan'];
+$harga = $user_data['harga'];
+$foto = $user_data['foto'];
+?>
 <style>
     .order{
         width: 100%;
@@ -111,43 +122,36 @@ while($user_data = mysqli_fetch_array($result))
     }
     </style>
 <div class="order" id="id_pesan">
-<div class="back-btn">
-    <a href="pesan.php">Back</a>
-        </div>
+    <div class="back-btn">
+        <a href="pesan.php">Back</a>
+    </div>
     <h1><span>Order</span>now<h1>
-    
     <div class="order_main">
         <div class="order_image">
             <img src="gambar.png">
         </div>
-        
         <form action="proses_pesan.php" method="POST">
             <div class="input">
                 <p>Makanan</p>
                 <input type="hidden" name="id_makanan" value="<?php echo $id_makanan ?>">
                 <input type="text" name="nama_makanan" value="<?php echo $nama_makanan ?>">
             </div>
-            
             <div class="input">
                 <p>Jumlah</p>
                 <input type="number" name="jumlah">
             </div>
-
             <div class="input">
                 <p>Nama</p>
-                <input type="text" name="id_user">
+                <input type="text" name="nama_user" value="<?php echo $user_name ?>" readonly>
             </div>
-            
             <div class="input">
                 <p>Alamat</p>
                 <input type="text" name="alamat">
             </div>
-
             <div class="input">
                 <p>Harga</p>
                 <input type="text" name="harga" value="<?php echo $harga ?>">
             </div>
-            
             <input type="submit" name="submit" value="order" class="order_btn">
         </form>
     </div>

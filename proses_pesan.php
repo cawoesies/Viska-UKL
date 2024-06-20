@@ -1,33 +1,24 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "web_kuliner";
+session_start();
+include("config.php");
 
-// Create connection
-$mysqli = new mysqli($servername, $username, $password, $dbname);
+if(isset($_POST['submit'])){
+    // Retrieve and sanitize user input
+    $id_makanan = mysqli_real_escape_string($mysqli, $_POST['id_makanan']);
+    $nama_makanan = mysqli_real_escape_string($mysqli, $_POST['nama_makanan']);
+    $jumlah = mysqli_real_escape_string($mysqli, $_POST['jumlah']);
+    $id_user = mysqli_real_escape_string($mysqli, $_SESSION['user_id']);
+    $alamat = mysqli_real_escape_string($mysqli, $_POST['alamat']);
+   
+    // Insert order data into the orders table including total price
+    $query = "INSERT INTO pesan (id_makanan, jumlah, id_user, alamat) VALUES ('$id_makanan', '$jumlah', '$id_user', '$alamat')";
 
-// Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-}
-
-if (isset($_POST['Submit']) && isset($_SESSION['id_user'])) {
-    $id_makanan = $_POST['id_makanan'];
-    $jumlah = $_POST['jumlah'];
-    $id_user = $_POST['id_user'];
-    $alamat = $_POST['alamat'];
-    $harga = $_POST['harga'];
-    
-
-    $sql = "INSERT INTO pesan (id_makanan, jumlah, id_user, alamat, harga) VALUES ('$id_makanan', '$jumlah','$id_user' , '$alamat', '$harga')";
-
-    if ($mysqli->query($sql) === TRUE) {
-        echo "New order created successfully";
+    if(mysqli_query($mysqli, $query)){
+        // Redirect to a confirmation page or display a success message
+        header('Location: success.php');
+        exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $mysqli->error;
+        echo "Error: " . $query . "<br>" . mysqli_error($mysqli);
     }
-
-    $mysqli->close();
 }
 ?>

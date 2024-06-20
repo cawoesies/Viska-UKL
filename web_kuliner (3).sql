@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2024 at 04:57 AM
+-- Generation Time: May 30, 2024 at 05:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -107,9 +107,9 @@ CREATE TABLE `pesan` (
   `id_user` int(100) UNSIGNED NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `jumlah` int(100) NOT NULL,
-  `harga` decimal(65,0) NOT NULL,
+  `harga` varchar(255) NOT NULL,
   `id_makanan` int(255) NOT NULL,
-  `total_harga` decimal(65,0) NOT NULL
+  `total_harga` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -117,26 +117,26 @@ CREATE TABLE `pesan` (
 --
 
 INSERT INTO `pesan` (`id_pesan`, `id_user`, `alamat`, `jumlah`, `harga`, `id_makanan`, `total_harga`) VALUES
-(1, 1, 'abc', 2, 50, 0, 0),
-(40, 1, 'Jasem', 2, 100, 0, 0),
-(41, 1, 'Jasem', 23, 50, 0, 0),
-(42, 1, 'gebang', 4, 100, 0, 0),
-(43, 1, 'gebang', 4, 100, 0, 0),
-(44, 1, 'Jasem', 2, 100, 0, 0),
-(45, 1, 'abc', 23, 100, 0, 0),
-(46, 1, 'gebang', 1, 50, 0, 0),
-(47, 1, 'xfhmfj', 5, 120, 0, 0),
-(48, 1, 'abc', 2, 75, 0, 0),
-(49, 1, 'abc', 2, 75, 0, 0),
-(51, 1, 'b', 8, 0, 0, 0),
-(52, 1, 'b', 8, 0, 0, 0),
-(53, 1, 'b', 8, 0, 0, 0),
-(55, 1, 'fdfsd', 3, 100, 0, 0),
-(56, 1, 'fdfsd', 3, 100, 0, 0),
-(57, 1, 'afdggf', 8, 110, 0, 0),
-(58, 1, 'm', 1, 50, 0, 0),
-(59, 1, 'abcde', 1, 40, 0, 0),
-(60, 1, ' Sidoarjo', 3, 0, 0, 0);
+(1, 1, 'abc', 2, '50', 0, '0'),
+(40, 1, 'Jasem', 2, '100', 0, '0'),
+(41, 1, 'Jasem', 23, '50', 0, '0'),
+(42, 1, 'gebang', 4, '100', 0, '0'),
+(43, 1, 'gebang', 4, '100', 0, '0'),
+(44, 1, 'Jasem', 2, '100', 0, '0'),
+(45, 1, 'abc', 23, '100', 0, '0'),
+(46, 1, 'gebang', 1, '50', 0, '0'),
+(47, 1, 'xfhmfj', 5, '120', 0, '0'),
+(48, 1, 'abc', 2, '75', 0, '0'),
+(49, 1, 'abc', 2, '75', 0, '0'),
+(51, 1, 'b', 8, '0', 0, '0'),
+(52, 1, 'b', 8, '0', 0, '0'),
+(53, 1, 'b', 8, '0', 0, '0'),
+(55, 1, 'fdfsd', 3, '100', 0, '0'),
+(56, 1, 'fdfsd', 3, '100', 0, '0'),
+(57, 1, 'afdggf', 8, '110', 0, '0'),
+(58, 1, 'm', 1, '50', 0, '0'),
+(59, 1, 'abcde', 1, '40', 0, '0'),
+(60, 1, ' Sidoarjo', 3, '0', 0, '0');
 
 -- --------------------------------------------------------
 

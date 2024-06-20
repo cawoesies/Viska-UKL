@@ -4,8 +4,6 @@ body{
     height: 100vh;
     background-size: cover;
     background-position: center;
-    }
-    {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -129,7 +127,7 @@ body{
             <?php
                 // select tabel user dari database
                 include 'config.php';
-                $result = mysqli_query($mysqli, "SELECT * FROM makanan") or die (mysqli_error());
+                $result = mysqli_query($mysqli, "SELECT * FROM makanan") or die (mysqli_error($mysqli));
 
                 while($data = mysqli_fetch_array($result)){
             ?>

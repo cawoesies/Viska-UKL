@@ -4,8 +4,6 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
-    }
-    {
     margin: 0;
     padding: 0;
     font-family: sans-serif;

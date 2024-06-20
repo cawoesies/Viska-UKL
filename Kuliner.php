@@ -1,22 +1,15 @@
 <style>
-    body{
-    background: #A67B5B;
-    height: 100vh;
+    body {
+    background: linear-gradient(135deg, #FAD0C4 0%, #FFD1FF 100%);
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
-    }
-    {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
+    color: #333;
     }
-   .banner{
-    width: 100%;
-    height: 100vh;
-    background-position: center;
-    background-size: center;
-   }
    .navbar{
     width: 90%;
     padding: 30px;
@@ -48,52 +41,71 @@
    .navbar a:hover{
     color: black;
    }
-   .content{
+    .content {
     width: 100%;
     position: absolute;
-    color: white;
-    top: 45%;
+    color: #fff;
+    top: 50%;
     transform: translateY(-50%);
     text-align: center;
-   }
-   button{
-    width: 100px;
-    padding: 10px;
-    margin: 5px 5px;
+    padding-top: 100px; 
+    }
+    button {
+    width: 120px;
+    padding: 10px 20px;
+    margin: 10px;
     text-align: center;
-    border-radius: 15px;
-    color: black;
-    border: 2px;
-    font-size: 10px;
+    border-radius: 20px;
+    color: #fff;
+    background: #FFB6C1;
+    border: none;
+    font-size: 14px;
     cursor: pointer;
-    font-weight: 500;
-   }
-   button:hover{
-    background: #FFCAD4;
-    transition: 0.5s;
-   }
-   button:hover{
-    color: white;
-   }
-   .banner {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-   }
-  .box {
-    width: 250px;
-    height: 330px;
-    background-color: #F7DCB9;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+    }
+    button:hover {
+    background: #FF69B4;
+    }
+    .jenis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 150px 0 50px 0; 
+    }
+    .box {
+    width: 350px;
+    height: 450px;
+    background-color: #FFE4E1;
     text-align: center;
-    padding: 70px 70px;
-    margin: 50px 30px 30px 50px;
-    border-radius: 10px;
-    float: left;
-  }
-  .box:hover {
-    background-color: #FFF6F6;
-    color: black;
-  }
+    padding: 30px; 
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    }
+    .box h2 {
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 5px; 
+    }
+    .box h3 {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #FF69B4;
+    }
+    .box p {
+    font-size: 18px;
+    line-height: 1.6;
+    }
+    .box:hover {
+    background-color: #FFB6C1;
+    transform: translateY(-10px);
+    }
+    .box:hover h2, .box:hover h3, .box:hover p {
+    color: #fff;
+    }
   </style>
 <html>
     <head>
@@ -115,7 +127,7 @@
             <?php
             // select tabel user dari database
             include 'config.php';
-            $result = mysqli_query($mysqli, "SELECT * FROM kuliner") or die (mysqli_error());
+            $result = mysqli_query($mysqli, "SELECT * FROM kuliner") or die (mysqli_error($mysqli));
 
             while($data = mysqli_fetch_array($result)){
                 ?>
